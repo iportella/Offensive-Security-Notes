@@ -1,0 +1,122 @@
+# Cyber Kill Chain
+
+## 📌 Overview / Visão Geral
+The Cyber Kill Chain is a framework developed to understand and combat cyber threats. The concept was based on the military term "Kill Chain," which describes the steps an adversary must complete to execute a successful attack.
+
+A Cyber Kill Chain ajuda a entender e interromper ataques cibernéticos em cada etapa do processo. Ao compreender essas fases, as organizações podem aplicar controles de segurança eficazes para impedir o avanço do ataque.
+
+It is structured into seven stages / Ela é estruturada em sete etapas:
+
+---
+
+## 1. 🔍 Reconnaissance / Reconhecimento
+**EN:** The attacker gathers information about the target to identify vulnerabilities and gaps in security.
+**Example:** Network scanning or social engineering to extract internal details.
+
+**PT:** O atacante coleta informações sobre o alvo para identificar vulnerabilidades.
+**Exemplo:** Varredura de rede ou engenharia social para obter dados internos.
+
+**Defensive Goal / Objetivo da defesa:** Detect and prevent recon attempts.
+
+**Defense Methods / Métodos de Defesa:**
+- External surface analysis (e.g. Shodan)
+- Log monitoring
+- Use of detection tools for scans
+
+---
+
+## 2. 🧪 Weaponization / Armamento
+**EN:** Creation of malicious payloads (e.g. malware + exploit).
+**Example:** A crafted PDF to exploit a reader vulnerability.
+
+**PT:** Criação de payloads maliciosos combinando exploit e malware.
+**Exemplo:** Um PDF armado para explorar falha em leitor de PDF.
+
+**Defensive Goal:** Identify vulnerabilities and patch.
+
+**Defense Methods:**
+- Asset inventory and hardening
+- Vulnerability scanning and patching
+- Threat Intel monitoring
+- Regular pentests and employee awareness
+
+---
+
+## 3. 📩 Delivery / Entrega
+**EN:** Transmission of the payload to the target (e.g. phishing, USB, drive-by).
+**Example:** Phishing e-mail with malicious attachment.
+
+**PT:** Entrega do malware ao alvo (phishing, mídia infectada etc).
+**Exemplo:** E-mail de phishing com PDF infectado.
+
+**Defense Methods:**
+- Security awareness and training
+- Anti-spam and endpoint tools
+- Network monitoring and sandboxing
+
+---
+
+## 4. 💥 Exploitation / Exploração
+**EN:** Exploit is triggered to run malicious code.
+**Example:** Malicious PDF is opened and exploits the system.
+
+**PT:** Exploração da falha para executar o código malicioso.
+**Exemplo:** Abertura de PDF infectado explorando falha do leitor.
+
+**Defense Methods:**
+- SIEM log analysis
+- EDR deployment
+- IDS/IPS for behavior detection
+
+---
+
+## 5. 🛠 Installation / Instalação
+**EN:** Malware installs persistence mechanisms on the system.
+**Example:** Trojan or ransomware installation.
+
+**PT:** O malware se instala para garantir acesso contínuo.
+**Exemplo:** Instalação de trojan ou ransomware após execução.
+
+**Defense Methods:**
+- HIPS
+- System integrity checks
+- 2FA and least privilege
+- SIEM and EDR alerts
+
+---
+
+## 6. 🛰 Command and Control / Comando e Controle
+**EN:** The attacker communicates with infected system to control it.
+**Example:** Malware beaconing to C2 server for further instructions.
+
+**PT:** Comunicação entre sistema infectado e atacante.
+**Exemplo:** Malware se conecta a servidor de C2 para receber comandos.
+
+**Defense Methods:**
+- Proxy requirement for all traffic
+- Passive network monitoring and flow analysis
+- NIDS/IPS and firewall with anomaly detection
+
+---
+
+## 7. 🎯 Action on Objectives / Ações no Objetivo
+**EN:** Attacker performs the intended malicious actions (exfiltration, destruction, lateral movement).
+**Example:** Data theft, ransomware encryption, launching DDoS.
+
+**PT:** Execução das ações maliciosas planejadas.
+**Exemplo:** Roubo de dados, criptografia de arquivos ou ataque lateral.
+
+**Defense Methods:**
+- Incident response plan
+- Database and activity monitoring
+- Offline backups
+- Crisis communication protocols
+
+---
+
+📚 **Use:** This dual-language reference was created for educational and professional training purposes.
+
+✍️ **Author / Autor:** Igor Portella  
+📧 **Email:** igorlllopesport@protonmail.com  
+🔒 **License:** MIT  
+⚠️ **Disclaimer:** For ethical hacking and authorized use only.
