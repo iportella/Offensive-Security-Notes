@@ -1,0 +1,132 @@
+# -----------------------------------------------------------------------------
+#  Offensive Security Notes - Google Hacking
+# -----------------------------------------------------------------------------
+#  Description : Introductory content and examples on Google Dorking techniques
+#                used for ethical hacking and reconnaissance.
+#  Author      : Igor Portella
+#  Email       : igorlllopesport@protonmail.com
+#  Version     : 1.0
+#  License     : MIT
+#  Disclaimer  : For educational and authorized use only.
+# =============================================================================
+
+# 🕵️ Google Hacking / Google Dorking
+
+## 🇧🇷 O que é Google Hacking?
+
+**Google Hacking**, ou **Google Dorking**, é uma técnica de busca avançada que utiliza operadores especiais conhecidos como "dorks" para localizar informações específicas na web. Esses operadores permitem que pesquisadores de segurança e profissionais de pentest descubram dados sensíveis expostos inadvertidamente, como:
+
+- Credenciais de banco de dados
+- Páginas administrativas acessíveis publicamente
+- Logs, backups e arquivos sensíveis
+- Informações sobre tecnologia de servidores
+
+## 🔍 Principais Operadores (Dorks)
+
+| Operador     | Descrição                                   | Exemplo                             |
+|--------------|---------------------------------------------|-------------------------------------|
+| `site:`      | Busca em um site específico                 | `site:exemplo.com.br`               |
+| `intitle:`   | Busca por palavras no título da página      | `intitle:"painel de login"`         |
+| `inurl:`     | Busca termos presentes na URL               | `inurl:"/admin"`                    |
+| `intext:`    | Busca por palavras no texto da página       | `intext:adminpass`                  |
+| `filetype:`  | Busca arquivos de tipo específico           | `filetype:env`                      |
+
+### 🧠 Sintaxe Geral
+```
+{operador}:{palavra-chave}
+```
+Se houver espaços na palavra-chave, utilize aspas:
+```
+intitle:"phpmyadmin login"
+```
+
+## 🧪 Exemplos de Dorks
+
+- Buscar arquivos PHP relacionados ao login do phpMyAdmin:
+```bash
+intitle:phpmyadmin filetype:php intext:login site:exemplo-site.com.br
+```
+
+- Buscar webcams na porta 8080:
+```bash
+intitle:"webcamXP" inurl:8080
+```
+
+- Buscar senhas em arquivos `.env`:
+```bash
+filetype:env "DB_PASSWORD"
+```
+
+- Buscar telefone no site do DETRAN/BA:
+```bash
+site:detran.ba.gov.br intext:telefone
+```
+
+- Buscar arquivos .txt contendo senhas em domínios .com.br:
+```bash
+site:com.br filetype:txt intext:senhas
+```
+
+## 🧬 Dork Databases (Dorks-DB)
+
+Uma das principais fontes para dorks é a **Google Hacking Database (GHDB)** mantida pelo [Exploit-DB](https://www.exploit-db.com/google-hacking-database).
+
+A GHDB categoriza os dorks em grupos como:
+- Sensitive Directories
+- Error Messages
+- Login Portals
+- Files Containing Passwords
+- Vulnerable Files
+- Devices (como Câmeras, DVRs, etc.)
+
+## ⚠️ Aviso de Uso
+
+Este material é fornecido **exclusivamente para fins educacionais e de segurança defensiva**. O uso de dorks para explorar sistemas sem autorização é **ilegal** e viola princípios éticos e leis de segurança cibernética.
+
+---
+
+## 🇺🇸 What is Google Hacking?
+
+**Google Hacking**, also known as **Google Dorking**, is a technique that uses advanced search operators (called "dorks") to find specific and often sensitive information indexed by search engines like Google.
+
+It is commonly used by security researchers and ethical hackers to identify unintentionally exposed:
+
+- Configuration files
+- Login portals
+- Backup files or passwords
+- Admin interfaces
+
+## 🔍 Common Dork Operators
+
+| Operator     | Description                           | Example                             |
+|--------------|---------------------------------------|-------------------------------------|
+| `site:`      | Search within a specific domain       | `site:example.com`                  |
+| `intitle:`   | Match keywords in the page title      | `intitle:"login"`                   |
+| `inurl:`     | Match keywords in the URL             | `inurl:"/admin"`                    |
+| `intext:`    | Match text inside the page content    | `intext:password`                   |
+| `filetype:`  | Search for specific file types        | `filetype:env`                      |
+
+## 🧪 Example Dorks
+
+- Find phpMyAdmin login pages:
+```bash
+intitle:phpmyadmin filetype:php intext:login site:example.com
+```
+
+- Find webcams on port 8080:
+```bash
+intitle:"webcamXP" inurl:8080
+```
+
+- Search for `.env` files containing database passwords:
+```bash
+filetype:env "DB_PASSWORD"
+```
+
+## 📚 Google Dorks Database
+
+Refer to the official [Google Hacking Database (GHDB)](https://www.exploit-db.com/google-hacking-database) from Exploit-DB for a categorized and updated list of dorks.
+
+## ⚠️ Legal Notice
+
+All information provided is for **educational purposes only**. Unauthorized usage of these techniques to access systems or data is **illegal** and unethical.
