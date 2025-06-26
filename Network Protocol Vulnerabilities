@@ -1,0 +1,91 @@
+# 🛠️ Network Protocol Vulnerabilities / Vulnerabilidades dos Protocolos de Rede
+
+Este documento apresenta uma visão geral das principais vulnerabilidades em protocolos de rede amplamente utilizados, junto de recomendações práticas para mitigação.
+
+This document presents an overview of the most common vulnerabilities in widely used network protocols, along with practical mitigation recommendations.
+
+## 📡 RDP (Remote Desktop Protocol)
+RDP is widely used for remote desktop access in corporate environments. It typically operates on port **3389**.
+
+**Vulnerabilities:**
+- **Weak credentials**: reused or weak passwords are easily brute-forced.
+- **Exposed port**: facilitates man-in-the-middle/on-path attacks.
+- **BlueKeep (CVE-2019-0708)**: wormable vulnerability allowing remote code execution.
+
+**Recommendations:**
+- Use VPN for secure remote access.
+- Block port 3389 for unauthorized IPs.
+- Regularly audit firewall rules and perform penetration testing.
+
+## 🔐 SSH (Secure Shell)
+Secure terminal access protocol, typically running on port **22**.
+
+**Vulnerabilities:**
+- **Unprotected SSH keys**: may allow unauthorized access.
+- **Lateral movement**: attackers abuse persistent trust relationships.
+- **Uncontrolled environments**: backdoors via misconfigured OpenSSH.
+
+**Recommendations:**
+- Enforce strong authentication.
+- Restrict access via VPN.
+- Regularly audit authorized SSH keys.
+
+## 🌐 HTTP (Hypertext Transfer Protocol)
+Web foundational protocol, operates on port **80**, inherently insecure.
+
+**Vulnerabilities:**
+- **Clear-text transmission**: susceptible to sniffing.
+- **Code injection**: lack of encryption increases risk.
+
+**Recommendations:**
+- Use HTTPS with TLS.
+- Redirect all HTTP traffic to HTTPS.
+
+## 📁 FTP (File Transfer Protocol)
+Legacy file transfer protocol, usually on port **21**.
+
+**Vulnerabilities:**
+- **Clear-text**: credentials and files transmitted unencrypted.
+- **Brute-force attacks**: common on poorly configured servers.
+- **Bounce attack**: port manipulation allows scanning and bypassing firewalls.
+
+**Recommendations:**
+- Use SFTP or FTPS.
+- Block port 21 if unused.
+
+## 🧷 SMBv1 (Server Message Block v1)
+Outdated protocol version, usually over port **445**.
+
+**Vulnerabilities:**
+- **EternalBlue (WannaCry)**: remote code execution exploit.
+- **Null sessions**: anonymous enumeration of users and shares.
+- **No encryption**: file and metadata transmitted in clear-text.
+
+**Recommendations:**
+- Disable SMBv1.
+- Use SMBv2/v3 with authentication and encryption.
+
+## 🖥️ Telnet
+Legacy remote terminal protocol, typically over port **23**.
+
+**Vulnerabilities:**
+- **Clear-text communication**: exposes usernames/passwords.
+- **Botnets (e.g., Mirai)**: propagation vector.
+- **Suspicious activity**: often associated with malware.
+
+**Recommendations:**
+- Replace with SSH.
+- Block Telnet access via firewall.
+
+## 📚 LDAP (Lightweight Directory Access Protocol)
+Used for authentication and directory services over port **389**.
+
+**Vulnerabilities:**
+- **Unencrypted traffic**: data including credentials sent in clear-text.
+- **LDAP injection**: query manipulation to gain unauthorized access.
+- **Anonymous binds**: allows login without credentials.
+
+**Recommendations:**
+- Use TLS (LDAPS) to secure communication.
+- Disable anonymous binds.
+- Sanitize and validate user input.
